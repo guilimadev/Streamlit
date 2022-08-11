@@ -86,6 +86,7 @@ def predction(df_jogos):
         st.write("Chances do time " + home['team'].iloc[0] + " vencer: " + str(resultado_home_porcetagem) + '%\n' + " Chances do time " + away['team'].iloc[0] + " vencer: " + str(resultado_away_porcetagem) + "%")
        
         resultado_previsao = "Chances do time " + home['team'].iloc[0] + " vencer: " + str(resultado_home_porcetagem) + '%\n' + " Chances do time " + away['team'].iloc[0] + " vencer: " + str(resultado_away_porcetagem) + "%"    
+        st.write(resultado_previsao)
         st.download_button("Baixar Resultado", resultado_previsao)
     
     
