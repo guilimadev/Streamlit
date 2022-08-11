@@ -1,15 +1,21 @@
 import streamlit as st
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import export_graphviz
+from sklearn import metrics
+import numpy as np 
  
 
-st.title('Conversor Mapfre')
+st.title('Superliga de Vôlei - Previsão Resultados')
 uploader = st.file_uploader("Escolha o Arquivo")
 
 df_jogos = pd.DataFrame()
 
 
 def predction(df_jogos):    
-    import numpy as np    
+       
 
     df_final = df_jogos
 
@@ -27,11 +33,7 @@ def predction(df_jogos):
     home_team = st.selectbox("Escolha o time da Casa", df_final['team home'])
     away_team = st.selectbox("Escolha o time da Casa", df_final['team away'])
 
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import cross_val_score
-    from sklearn.tree import export_graphviz
-    from sklearn import metrics
+    
     X = df_final.drop(columns=['team home', 'team away','qtd sets', 'vencedor','id_jogo'])
     y = df_final['vencedor']
 
