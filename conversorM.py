@@ -11,7 +11,7 @@ import numpy as np
 st.title('Superliga de Vôlei - Previsão Resultados')
 uploader = st.file_uploader("Escolha o Arquivo")
 
-df_jogos = pd.DataFrame()
+
 
 
 def predction(df_jogos):    
@@ -94,6 +94,7 @@ def predction(df_jogos):
 
 
 if uploader is not None:
+    df_jogos = pd.DataFrame()
     df_jogos = pd.read_csv(uploader)
     st.write(df_jogos)
     predction(df_jogos)
