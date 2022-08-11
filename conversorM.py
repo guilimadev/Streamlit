@@ -84,11 +84,9 @@ def predction(df_jogos):
     mostrar_resultado = st.button("Calcular Porcentagem")
     if mostrar_resultado:
         st.write("Chances do time " + home['team'].iloc[0] + " vencer: " + str(resultado_home_porcetagem) + '%\n' + " Chances do time " + away['team'].iloc[0] + " vencer: " + str(resultado_away_porcetagem) + "%")
-        f = open("Resultado.txt", "w")
-        f.write("Chances do time " + home['team'].iloc[0] + " vencer: " + str(resultado_home_porcetagem) + '%\n' + " Chances do time " + away['team'].iloc[0] + " vencer: " + str(resultado_away_porcetagem) + "%")
-        f.close()
-        with open('Resultado.txt', 'rb') as f:
-            st.download_button("Baixar Resultado", f, file_name="Resultado Jogo.txt")
+       
+        resultado_previsao = "Chances do time " + home['team'].iloc[0] + " vencer: " + str(resultado_home_porcetagem) + '%\n' + " Chances do time " + away['team'].iloc[0] + " vencer: " + str(resultado_away_porcetagem) + "%"    
+        st.download_button("Baixar Resultado", resultado_previsao)
     
     
 
